@@ -1,0 +1,19 @@
+{
+  "name": "churchsuite-events-gatsby-plugin",
+  "version": "1.0.1",
+  "description": "Loader to get events from Churchsuite API into Gatsby GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo \"No build script setup\""
+  },
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "author": "Bradley Cornwell <bradley@isfluent.com>",
+  "license": "0BSD",
+  "dependencies": {
+    "node-fetch": "^2.6.7"
+  }
+}
