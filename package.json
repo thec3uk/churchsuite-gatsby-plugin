@@ -1,6 +1,6 @@
 {
   "name": "churchsuite-events-gatsby-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Loader to get events from Churchsuite API into Gatsby GraphQL",
   "main": "index.js",
   "scripts": {
@@ -15,5 +15,14 @@
   "license": "0BSD",
   "dependencies": {
     "node-fetch": "^2.6.7"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thec3uk/churchsuite-gatsby-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thec3uk/churchsuite-gatsby-plugin/issues"
+  },
+  "homepage": "https://github.com/thec3uk/churchsuite-gatsby-plugin#readme"
 }
