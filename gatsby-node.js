@@ -1,24 +1,39 @@
 // ...imports
-const fetch = require('node-fetch');
+const { QueryParams } = require('./churchsuite-api-client');
+const client = require('./churchsuite-api-client');
 
 exports.onPreInit = (_, pluginOptions) => {
 	console.log(`Loading events for ${pluginOptions.domain}`);
 };
 
 const EVENT_NODE_TYPE = `Event`;
-const url = domain => `https://${domain}/embed/calendar/json`;
-
-const getEmbedEvents = async url => {
-	const response = await fetch(url);
-	return await response.json();
-};
 
 exports.sourceNodes = async (
 	{ actions, createContentDigest, createNodeId },
-	{ domain }
+	{
+		domain,
+		date_start,
+		date_end,
+		featured,
+		category_ids,
+		site_ids,
+		embed_signup,
+		public_signup,
+	}
 ) => {
 	const { createNode } = actions;
-	const eventData = await getEmbedEvents(url(domain));
+	const eventData = await client.fetchEvents(
+		domain,
+		new QueryParams(
+			date_start,
+			date_end,
+			featured,
+			category_ids,
+			site_ids,
+			embed_signup,
+			public_signup
+		)
+	);
 
 	eventData.forEach(event =>
 		createNode({
