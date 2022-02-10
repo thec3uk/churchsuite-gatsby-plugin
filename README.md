@@ -5,7 +5,8 @@ Gatsby source plugin for sourcing data into your Gatsby application from [church
 [![npm](https://badgen.net/npm/v/churchsuite-events-gatsby-plugin)](https://www.npmjs.com/package/churchsuite-events-gatsby-plugin)
 
 - [Install](#install)
-- [Add to Gatsby project](#Add to Gatsby project)
+- [Add to project](#add-to-project)
+- [Imported data](#imported-data)
 - [License](#license)
 
 ---
@@ -19,7 +20,7 @@ npm install churchsuite-gatsby-plugin
 # using yarn
 yarn add churchsuite-gatsby-plugin
 ```
-## Add to Gatsby project
+## Add to project
 
 ```javascript
 // In gatsby-config.js
