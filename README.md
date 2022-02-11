@@ -9,6 +9,7 @@ Gatsby source plugin for sourcing data into your Gatsby application from [church
   - [Add to project](#add-to-project)
   - [Imported data](#imported-data)
     - [Calendar JSON feed](#calendar-json-feed)
+  - [Available methods](#available-methods)
   - [License](#license)
 
 ---
@@ -31,6 +32,7 @@ plugins: [
 		{
 			resolve: 'churchsuite-events-gatsby-plugin',
 			options: {
+        // related to calendar embed that runs on build
         domain: `YOUR_CHURCHSUITE_DOMAIN` // referred to as {your_account_id} in CS docs.
         date_start: `yyy-mm-dd`,
 				date_end: `yyy-mm-dd`,
@@ -39,6 +41,10 @@ plugins: [
 				site_ids: '', // comma seperated list
 				embed_signup: `boolean`,
 				public_signup: `boolean`,
+        // used by event sign up
+        account: 'YOUR_CHURCHSUITE_X-ACCOUNT_HEADER_VALUE',
+        application: 'YOUR_CHURCHSUITE_X-APPLICATION_HEADER_VALUE', //
+        authkey: 'YOUR_CHURCHSUITE_X-AUTH_HEADER_VALUE'
         },
 		},
 	]
@@ -73,6 +79,24 @@ query allEvents {
 ```
 
 A full list of available fields can be seen in the Gatsby graphql explorer.
+
+## Available methods
+
+```javascript
+function signUp(eventId, data) {}
+```
+
+eventId - the string identifier of your event, retreieved from graphql allEvents query.
+data - an object container the data for the sign up, e.g
+
+```javascript
+{
+  first_name: 'Mark',
+  last_name: 'Davies',
+  mobile: '',
+  email: 'mark.davies@gmail.com',
+}
+```
 
 ## License
 

@@ -6,15 +6,13 @@ const fetchEvents = async (domain, params) => {
 };
 
 const signUpToEvent = async (eventId, data) => {
-	console.log(data);
-
 	const opts = {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			'X-Account': 'thec3',
-			'X-Application': 'zapier.api',
-			'X-Auth': 'keyyzyy5l9uqicjacdtm',
+			'X-Account': __GATSBY_PLUGIN_CHURCHSUITE_ACCOUNT__,
+			'X-Application': __GATSBY_PLUGIN_CHURCHSUITE_APPLICATION__,
+			'X-Auth': __GATSBY_PLUGIN_CHURCHSUITE_AUTH_KEY__,
 			'Access-Control-Allow-Origin': '*',
 		},
 		body: JSON.stringify({
