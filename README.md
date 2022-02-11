@@ -43,7 +43,7 @@ plugins: [
 				public_signup: `boolean`,
         // used by event sign up
         account: 'YOUR_CHURCHSUITE_X-ACCOUNT_HEADER_VALUE',
-        application: 'YOUR_CHURCHSUITE_X-APPLICATION_HEADER_VALUE', //
+        application: 'YOUR_CHURCHSUITE_X-APPLICATION_HEADER_VALUE',
         authkey: 'YOUR_CHURCHSUITE_X-AUTH_HEADER_VALUE'
         },
 		},

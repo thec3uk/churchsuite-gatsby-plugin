@@ -10,10 +10,9 @@ const signUpToEvent = async (eventId, data) => {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',
-			'X-Account': __GATSBY_PLUGIN_CHURCHSUITE_ACCOUNT__,
-			'X-Application': __GATSBY_PLUGIN_CHURCHSUITE_APPLICATION__,
-			'X-Auth': __GATSBY_PLUGIN_CHURCHSUITE_AUTH_KEY__,
-			'Access-Control-Allow-Origin': '*',
+			'X-Account': `${__GATSBY_PLUGIN_CHURCHSUITE_ACCOUNT__}`,
+			'X-Application': `${__GATSBY_PLUGIN_CHURCHSUITE_APPLICATION__}`,
+			'X-Auth': `${__GATSBY_PLUGIN_CHURCHSUITE_AUTH_KEY__}`,
 		},
 		body: JSON.stringify({
 			action: 'add',
@@ -24,7 +23,6 @@ const signUpToEvent = async (eventId, data) => {
 			],
 		}),
 	};
-	console.log('opts for request', opts);
 	return await fetch(signUpUrl(eventId), opts);
 };
 
