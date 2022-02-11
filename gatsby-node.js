@@ -47,7 +47,7 @@ exports.sourceNodes = async (
 };
 
 exports.onCreateWebpackConfig = function (
-	{ actions },
+	{ plugins, actions },
 	{ domain, account, application, authkey }
 ) {
 	actions.setWebpackConfig({
