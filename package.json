@@ -1,6 +1,6 @@
 {
   "name": "churchsuite-events-gatsby-plugin",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Loader to get events from Churchsuite API into Gatsby GraphQL",
   "main": "index.js",
   "scripts": {

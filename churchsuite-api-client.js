@@ -15,6 +15,7 @@ const signUpToEvent = async (eventId, data) => {
 			'X-Account': 'thec3',
 			'X-Application': 'zapier.api',
 			'X-Auth': 'keyyzyy5l9uqicjacdtm',
+			'Access-Control-Allow-Origin': '*',
 		},
 		body: JSON.stringify({
 			action: 'add',
