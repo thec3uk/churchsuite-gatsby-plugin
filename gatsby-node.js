@@ -1,6 +1,5 @@
 // ...imports
-const { QueryParams } = require('./churchsuite-api-client');
-const client = require('./churchsuite-api-client');
+const { QueryParams, fetchEvents } = require('./churchsuite-api-client');
 
 exports.onPreInit = (_, pluginOptions) => {
 	console.log(`Loading events for ${pluginOptions.domain}`);
@@ -22,7 +21,7 @@ exports.sourceNodes = async (
 	}
 ) => {
 	const { createNode } = actions;
-	const eventData = await client.fetchEvents(
+	const eventData = await fetchEvents(
 		domain,
 		new QueryParams(
 			date_start,
@@ -49,4 +48,19 @@ exports.sourceNodes = async (
 		})
 	);
 	return;
+};
+
+exports.onCreateWebpackConfig = function (_ref, _ref2) {
+	var plugins = _ref.plugins,
+		actions = _ref.actions;
+	console.log('on create webpack config', _ref2.domain);
+	var domain = _ref2.domain;
+
+	actions.setWebpackConfig({
+		plugins: [
+			plugins.define({
+				__GATSBY_PLUGIN_CHURCHSUITE_DOMAIN__: JSON.stringify(domain),
+			}),
+		],
+	});
 };

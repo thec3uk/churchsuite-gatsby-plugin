@@ -5,6 +5,33 @@ const fetchEvents = async (domain, params) => {
 	return await response.json();
 };
 
+const signUpToEvent = async (eventId, data) => {
+	console.log(data);
+
+	const opts = {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'X-Account': 'thec3',
+			'X-Application': 'zapier.api',
+			'X-Auth': 'keyyzyy5l9uqicjacdtm',
+		},
+		body: JSON.stringify({
+			action: 'add',
+			signups: [
+				{
+					...data,
+				},
+			],
+		}),
+	};
+	console.log('opts for request', opts);
+	return await fetch(signUpUrl(eventId), opts);
+};
+
+const signUpUrl = eventId =>
+	`https://api.churchsuite.co.uk/v1/calendar/event/1016/signups`; // will be event id but hardcoding for testing
+
 const eventsUrl = (d, qp) => {
 	const p = Object.keys(qp)
 		.filter(f => !!qp[f])
@@ -32,4 +59,9 @@ class QueryParams {
 	}
 }
 
-module.exports = { QueryParams, buildUrl: eventsUrl, fetchEvents };
+module.exports = {
+	QueryParams,
+	buildUrl: eventsUrl,
+	fetchEvents,
+	signUpToEvent,
+};

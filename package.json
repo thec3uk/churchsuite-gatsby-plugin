@@ -16,7 +16,8 @@
   "author": "Bradley Cornwell <bradley@isfluent.com>",
   "license": "0BSD",
   "dependencies": {
-    "node-fetch": "^2.6.7"
+    "node-fetch": "^2.6.7",
+    "webpack": "^5.68.0"
   },
   "devDependencies": {
     "jest": "^27.5.1"
